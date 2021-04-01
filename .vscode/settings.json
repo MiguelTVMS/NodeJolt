@@ -1,5 +1,10 @@
 {
     "javascript.format.semicolons": "insert",
     "typescript.format.semicolons": "insert",
-    "typescript.tsdk": "./node_modules/typescript/lib"
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "cSpell.words": [
+        "Defaultr"
+    ]
 }
