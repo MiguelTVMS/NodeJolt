@@ -4,6 +4,8 @@
   "description": "A Bazarvoice's Jolt port to javascript",
   "main": "main.js",
   "scripts": {
+    "build": "tsc --build --verbose",
+    "clean": "tsc --build --clean",
     "test": "mocha -r ts-node/register src/tests/**/*.test.ts",
     "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
   },
@@ -16,7 +18,7 @@
     "jolt"
   ],
   "author": "João Miguel Marques Silva <joao@miguel.ms>",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/MiguelTVMS/NodeJolt/issues"
   },
@@ -29,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "chai": "^4.3.4",
+    "chai-interface": "^2.0.3",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",

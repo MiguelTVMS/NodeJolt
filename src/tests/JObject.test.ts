@@ -13,8 +13,6 @@ const readFile = promisify(fs.readFile);
 function getJsonFile(jsonPath: string): string {
     jsonPath = path.join(__dirname, _jsonFolder, jsonPath);
     var fileStats = fs.statSync(jsonPath);
-    if (!fileStats.isFile())
-        throw new Error(`File ${jsonPath} not found`);
 
     return fs.readFileSync(jsonPath, 'utf8');
 };
@@ -24,6 +22,6 @@ describe('JObject', function () {
         var jsonString = getJsonFile("sample/input.json");
         var json = JObject.fromJsonString(jsonString);
 
-        expect(typeof json).to.be.eql("JObject");
+        expect(typeof json).to.be.eql("object");
     });
 });

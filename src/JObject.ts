@@ -1,4 +1,7 @@
-export class JObject extends Object {
+
+export interface IJObject extends Object { }
+
+export class JObject extends Object implements IJObject {
     constructor(value?: any) {
         super(value);
         Object.setPrototypeOf(this, JObject.prototype);
