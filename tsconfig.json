@@ -1,15 +1,16 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./dist",
-  },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "tests",
-    "**/*.test.ts"
-  ]
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node 14",
+    "compilerOptions": {
+        "lib": ["ES6"],
+        "outDir": "./dist",
+        "module": "ES6",
+        "target": "ES6",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts", "tests", "**/*.test.ts"]
 }

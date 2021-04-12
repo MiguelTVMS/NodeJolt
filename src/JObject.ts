@@ -1,13 +1,26 @@
+import { Key } from "./defaultr/Key";
+import { JoltError } from "./errors/JoltError";
 
-export interface IJObject extends Object { }
+export class JObject {
 
-export class JObject extends Object implements IJObject {
-    constructor(value?: any) {
-        super(value);
+    [index: string]: Object;
+
+    constructor(value?: Object) {
+        if (value !== undefined) {
+            Object.keys(value).forEach(k => {
+                this[k] = Reflect.get(value, k);
+            });
+        }
         Object.setPrototypeOf(this, JObject.prototype);
     }
 
+
     public static fromJsonString(value: string): JObject {
-        return new JObject(JSON.parse(value));
+        try {
+            return new JObject(JSON.parse(value));
+        } catch (error) {
+            throw new JoltError(`Unable to serialize JSON: ${error.message}`);
+        }
+
     }
 }

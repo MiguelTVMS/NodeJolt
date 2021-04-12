@@ -4,7 +4,17 @@
     "typescript.tsdk": "./node_modules/typescript/lib",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "cSpell.words": [
-        "Defaultr"
-    ]
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.words": ["Bazarvoice's", "Defaultr", "Jo", "João", "lcov", "o"]
 }

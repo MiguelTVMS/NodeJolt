@@ -20,7 +20,7 @@ export abstract class Key {
         return this._op;
     }
 
-    public get IsArrayOutput(): boolean {
+    public get IsArrayOutput(): Boolean {
         return this._isArrayOutput;
     }
 
@@ -72,7 +72,11 @@ export abstract class Key {
 
     protected abstract GetLiteralIntKey(): Number;
 
-    public static ProcessSpec(spec: Object, parentIsArray = false): Set<Key> {
+    public static ParseSpec(spec: Object): Set<Key> {
+        return this.ProcessSpec(spec, false);
+    }
+
+    public static ProcessSpec(spec: Object, parentIsArray: Boolean): Set<Key> {
 
         var results = new Set<Key>();
 

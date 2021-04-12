@@ -1,5 +1,8 @@
 export abstract class SpecDriven {
 
-    public static rootKey = "root";
+    protected static _rootKey = "root";
+    public static get RootKey(): string {
+        return this._rootKey;
+    }
 
 }
