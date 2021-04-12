@@ -3,14 +3,13 @@ import { SpecDriven } from "../SpecDriven";
 import { JObject } from "../JObject";
 import { Key } from "./Key";
 import { WildCards } from "./WildCards";
+import { JToken } from "../JToken";
 
 export class Defaultr implements SpecDriven, Transform {
-
     private readonly _mapRoot: Key;
     private readonly _arrayRoot: Key | undefined;
 
-    constructor(spec: Object) {
-
+    constructor(spec: JToken) {
         var rootString = SpecDriven.RootKey;
 
         {
@@ -26,25 +25,16 @@ export class Defaultr implements SpecDriven, Transform {
             try {
                 tempKey = Key.ParseSpec(rootSpec).values().next().value;
                 this._arrayRoot = tempKey;
-            }
-            catch (FormatException) {
+            } catch (FormatException) {
                 // this is fine, it means the top level spec has non numeric keys
                 //  if someone passes a top level array as input later we will error then
             }
         }
-
     }
 
     transform(input?: Object): Object {
-
         if (input == undefined) input = new JObject();
 
-
-
-
         return new Object();
-
     }
-
 }
-
