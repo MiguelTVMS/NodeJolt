@@ -1,6 +1,6 @@
-import { PathElement } from "./PathElement";
+import { IPathElement } from "./IPathElement";
 
-export abstract class BasePathElement implements PathElement {
+export abstract class BasePathElement implements IPathElement {
     readonly rawKey: string;
 
     constructor(key: string) {

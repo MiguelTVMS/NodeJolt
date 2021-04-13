@@ -1,8 +1,8 @@
 import { BasePathElement } from "../pathelement/BasePathElement";
-import { EvaluatablePathElement } from "../pathelement/EvaluatablePathElement";
+import { IEvaluatablePathElement } from "../pathelement/IEvaluatablePathElement";
 import { WalkedPath } from "./WalkedPath";
 
-export class MatchedElement extends BasePathElement implements EvaluatablePathElement {
+export class MatchedElement extends BasePathElement implements IEvaluatablePathElement {
     private readonly _subKeys: Array<string>;
     private _hashCount = 0;
 
