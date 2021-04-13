@@ -20,11 +20,15 @@ export class JToken extends JEnumerable<JToken> implements IJToken {
         if (value == undefined) this.Type = JTokenType.Undefined;
         else if (value === null) this.Type = JTokenType.Null;
         else if (typeof value === "function" || typeof value === "object") this.Type = JTokenType.Object;
-        else if (Array.isArray(value)) this.Type = JTokenType.Array;
+        else if (this.isJEnumerableJToken(value)) this.Type = JTokenType.Array;
         else this.Type = JTokenType.None;
 
         // If it's an array
-        if (this.Type === JTokenType.Array) this.push(value as JEnumerable<JToken>);
+        if (this.Type === JTokenType.Array) (value as JEnumerable<JToken>).forEach((jt) => this.add(jt));
+    }
+
+    isJEnumerableJToken(value: any): boolean {
+        return typeof value.size === "number";
     }
 
     clone(): IJToken {
