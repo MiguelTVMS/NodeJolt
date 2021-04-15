@@ -1,11 +1,11 @@
-import { Transform } from "../Transform";
+import { ITransform } from "../ITransform";
 import { SpecDriven } from "../SpecDriven";
 import { JObject } from "../JObject";
 import { Key } from "./Key";
 import { WildCards } from "./WildCards";
 import { JToken } from "../JToken";
 
-export class Defaultr implements SpecDriven, Transform {
+export class Defaultr implements SpecDriven, ITransform {
     private readonly _mapRoot: Key;
     private readonly _arrayRoot: Key | undefined;
 

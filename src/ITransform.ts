@@ -1,6 +1,5 @@
 import { JoltTransform } from "./JoltTransform";
 
-export interface Transform extends JoltTransform {
+export interface ITransform extends JoltTransform {
     transform: (input: Object) => Object;
 }
-

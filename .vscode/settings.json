@@ -16,13 +16,6 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "cSpell.words": [
-        "Bazarvoice's",
-        "Defaultr",
-        "Jo",
-        "João",
-        "Shiftr",
-        "lcov",
-        "o"
-    ]
+    "cSpell.words": ["Bazarvoice's", "Defaultr", "Evaluatable", "Jo", "João", "Shiftr", "lcov", "o"],
+    "cSpell.ignoreWords": ["pathelement"]
 }
